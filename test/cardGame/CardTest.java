@@ -76,4 +76,6 @@ public class CardTest {
     void invalidCardExceptionIsThrownWhenValueIsInvalid(){
   assertThrows(InvalidCardValueException.class,()->new Card(DIAMOND,17));
 }
+
+
 }
