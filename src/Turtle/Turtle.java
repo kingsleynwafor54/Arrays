@@ -3,7 +3,6 @@ package Turtle;
 public class Turtle {
 
     private Pen pen;
-    private SketchPad sketchPad;
     private Direction direction;
 
     public Direction getDirection() {
@@ -36,5 +35,9 @@ public  void move( int numberOfSteps){
         turtle.move(12);
         turtle.getDirection();
        // boolean[] airline=new boolean[10];
+    }
+
+    private void move2(int[] commands, SketchPad sketchPad) {
+
     }
 }

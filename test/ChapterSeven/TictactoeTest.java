@@ -25,17 +25,17 @@ public class TictactoeTest {
         assertEquals("X",tictactoe.validatingUserInput(1));
         assertEquals("O",tictactoe.validatingUserInput(2));
 }
-@Test
-void displayTictatoeTest(){
-    System.out.println(tictactoe.displayTictactoe(1,1));
-    System.out.println(tictactoe.displayTictactoe(2,2));
-    System.out.println(tictactoe.displayTictactoe(4,1));
-    System.out.println(tictactoe.displayTictactoe(3,2));
-    System.out.println(tictactoe.displayTictactoe(6,2));
-    System.out.println(tictactoe.displayTictactoe(9,2));
-   // System.out.println(tictactoe.displayTictactoe(3,1));
-      //  assertEquals("X",tictactoe.displayTictactoe(1,1));
-}
+//@Test
+//void displayTictatoeTest(){
+//    System.out.println(tictactoe.displayTictactoe(1,1));
+//    System.out.println(tictactoe.displayTictactoe(2,2));
+//    System.out.println(tictactoe.displayTictactoe(4,1));
+//    System.out.println(tictactoe.displayTictactoe(3,2));
+//    System.out.println(tictactoe.displayTictactoe(6,2));
+//    System.out.println(tictactoe.displayTictactoe(9,2));
+//   // System.out.println(tictactoe.displayTictactoe(3,1));
+//      //  assertEquals("X",tictactoe.displayTictactoe(1,1));
+//}
 
 @Test
 

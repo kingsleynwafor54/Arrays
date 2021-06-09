@@ -26,17 +26,18 @@ public class Tictactoe {
         String changer = "";
         if (userInput == 1) {
             changer = " X ";
-            playerOne.add(userInput);
+
         } else if (userInput == 2) {
             changer = " O ";
-            playerTwo.add(userInput);
-        } else changer = "You are a mumu man/woman";
+
+        }
         return changer;
     }
 
-    public String displayTictactoe(int space, int userInput) {
+    public String displayTictactoe(int space, int userInput) throws GameWonExceptionPlayerOne, DrawException, GameWonExceptionPlayerTwo {
         String changer = "";
-
+        playerOne.add(space);
+        playerTwo.add(space);
         switch (space) {
             case 1:
                 gameBoard[0][0] = validatingUserInput(userInput);
@@ -85,113 +86,113 @@ public class Tictactoe {
     }
 
 
-
-    public void checker() {
-        if (gameBoard[0][0].equals(" X ") && gameBoard[0][2].equals(" X ") && gameBoard[0][4].equals(" X ")) {
-            System.out.println("PlayerOne Wins");
-
-
-        }
-
-        if (gameBoard[2][0].equals(" X ") && gameBoard[2][2].equals(" X ") && gameBoard[2][4].equals(" X ")) {
-            System.out.println("PlayerOne Wins");
-
-
-        }
-        if (gameBoard[4][0].equals(" X ") && gameBoard[4][2].equals(" X ") && gameBoard[4][4].equals(" X ")) {
-            System.out.println("PlayerOne Wins");
-
-        }
-        if (gameBoard[0][0].equals(" X ") && gameBoard[0][2].equals(" X ") && gameBoard[0][4].equals(" X ")) {
-            System.out.println("PlayerOne Wins");
-
-        }
-        if (gameBoard[0][0].equals(" X ") && gameBoard[2][0].equals(" X ") && gameBoard[4][0].equals(" X ")) {
-            System.out.println("PlayerOne Wins");
-
-        }
-        if (gameBoard[0][2].equals(" X ") && gameBoard[2][2].equals(" X ") && gameBoard[4][2].equals(" X ")) {
-            System.out.println("PlayerOne Wins");
-
-        }
-        if (gameBoard[0][4].equals(" X ") && gameBoard[2][4].equals(" X ") && gameBoard[4][4].equals(" X ")) {
-            System.out.println("PlayerOne Wins");
-
-        }
-
-        if (gameBoard[0][0].equals(" X ") && gameBoard[2][2].equals(" X ") && gameBoard[4][4].equals(" X ")) {
-            System.out.println("PlayerOne Wins");
-
-        }
+    public void checker() throws GameWonExceptionPlayerOne, DrawException, GameWonExceptionPlayerTwo {
 
         if (gameBoard[0][0].equals(" O ") && gameBoard[0][2].equals(" O ") && gameBoard[0][4].equals(" O ")) {
-            System.out.println("PlayerTwo Wins");
+            throw new GameWonExceptionPlayerTwo();
 
         }
 
         if (gameBoard[2][0].equals(" O ") && gameBoard[2][2].equals(" 0 ") && gameBoard[2][4].equals(" O ")) {
-            System.out.println("PlayerOne Wins");
+            throw new GameWonExceptionPlayerTwo();
 
         }
         if (gameBoard[4][0].equals(" O ") && gameBoard[4][2].equals(" O ") && gameBoard[4][4].equals(" O ")) {
-            System.out.println("PlayerTwo Wins");
+            throw new GameWonExceptionPlayerTwo();
 
         }
-        if (gameBoard[0][0].equals(" O ") && gameBoard[0][2].equals(" O ") && gameBoard[0][4].equals(" O ")) {
-            System.out.println("PlayerTwo Wins");
 
-        }
         if (gameBoard[0][0].equals(" O ") && gameBoard[2][0].equals(" O ") && gameBoard[4][0].equals(" O ")) {
-            System.out.println("PlayerTwo Wins");
-
+            throw new GameWonExceptionPlayerTwo();
         }
         if (gameBoard[0][2].equals(" O ") && gameBoard[2][2].equals(" O ") && gameBoard[4][2].equals(" O ")) {
-            System.out.println("PlayerTwo Wins");
+            throw new GameWonExceptionPlayerTwo();
 
         }
         if (gameBoard[0][4].equals(" O ") && gameBoard[2][4].equals(" O ") && gameBoard[4][4].equals(" O ")) {
-            System.out.println("PlayerTwo Wins");
+            throw new GameWonExceptionPlayerTwo();
 
         }
 
         if (gameBoard[0][0].equals(" O ") && gameBoard[2][2].equals(" O ") && gameBoard[4][4].equals(" O ")) {
-
-            System.out.println("PlayerTwo Wins");
+            throw new GameWonExceptionPlayerTwo();
 
         }
         if (gameBoard[0][4].equals(" O ") && gameBoard[2][2].equals(" O ") && gameBoard[4][0].equals(" O ")) {
+            throw new GameWonExceptionPlayerTwo();
 
-            System.out.println("PlayerTwo Wins");
+        }
+        //------------------------------------------------------------------------------------------------------------------------------------
+
+        if (gameBoard[0][0].equals(" X ") && gameBoard[0][2].equals(" X ") && gameBoard[0][4].equals(" X ")) {
+            throw new GameWonExceptionPlayerOne();
+
+        }
+
+        if (gameBoard[2][0].equals(" X ") && gameBoard[2][2].equals(" X ") && gameBoard[2][4].equals(" X ")) {
+            throw new GameWonExceptionPlayerOne();
+
+        }
+        if (gameBoard[4][0].equals(" X ") && gameBoard[4][2].equals(" X ") && gameBoard[4][4].equals(" X ")) {
+            throw new GameWonExceptionPlayerOne();
+
+        }
+
+        if (gameBoard[0][0].equals(" X ") && gameBoard[2][0].equals(" X ") && gameBoard[4][0].equals(" X ")) {
+            throw new GameWonExceptionPlayerOne();
+
+        }
+        if (gameBoard[0][2].equals(" X ") && gameBoard[2][2].equals(" X ") && gameBoard[4][2].equals(" X ")) {
+            throw new GameWonExceptionPlayerOne();
+
+        }
+        if (gameBoard[0][4].equals(" X ") && gameBoard[2][4].equals(" X ") && gameBoard[4][4].equals(" X ")) {
+            throw new GameWonExceptionPlayerOne();
+
+        }
+
+        if (gameBoard[0][0].equals(" X ") && gameBoard[2][2].equals(" X ") && gameBoard[4][4].equals(" X ")) {
+
+            throw new GameWonExceptionPlayerOne();
 
         }
         if (gameBoard[0][4].equals(" X ") && gameBoard[2][2].equals(" X ") && gameBoard[4][0].equals(" X ")) {
 
-            System.out.println("PlayerTwo Wins");
+            throw new GameWonExceptionPlayerOne();
 
         }
+
+
     }
 
-        public static void main (String[]args){
-                Tictactoe tictactoe = new Tictactoe();
-            Scanner scanner=new Scanner(System.in);
-                for (int counter=0;counter<9;counter++){
-                    System.out.println("Enter your placement");
-                    int placement=scanner.nextInt();
-                    System.out.println("Player");
-                    int value=scanner.nextInt();
-                    if(Tictactoe.playerOne.contains(placement)||Tictactoe.playerTwo.contains(placement)){
-                        System.out.println("This position has been chosen");
-                        continue;
-                    }
-
-                    tictactoe.displayTictactoe(placement,value);
-
-
-
-
-                }
-                }
+    public static void main(String[] args) throws DrawException, GameWonExceptionPlayerOne {
+        Tictactoe tictactoe = new Tictactoe();
+        Scanner scanner = new Scanner(System.in);
+        for (int counter = 0; counter < 9; counter++) {
+            System.out.println("Enter your placement");
+            int placement = scanner.nextInt();
+            System.out.println("Player");
+            int value = scanner.nextInt();
+            if (Tictactoe.playerOne.contains(placement) || Tictactoe.playerTwo.contains(placement)) {
+                System.out.println("This position has been chosen");
+                continue;
 
             }
+
+            try {
+                tictactoe.displayTictactoe(placement, value);
+
+            } catch (GameWonExceptionPlayerOne e) {
+                System.out.println("playerOne wins");
+                break;
+            } catch (GameWonExceptionPlayerTwo e) {
+                System.out.println("playerTwo wins");
+                break;
+            }
+
+        }
+
+    }
+}
 
 

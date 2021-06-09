@@ -1,10 +1,8 @@
-package cardGame;
+package CardGame;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-import static cardGame.Suit.*;
+import static CardGame.Suit.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

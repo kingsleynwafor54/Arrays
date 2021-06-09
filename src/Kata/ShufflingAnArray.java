@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class ShufflingAnArray {
-   // SecureRandom secureRandom = new SecureRandom();
-    Random secureRandom=new Random();
+    // SecureRandom secureRandom = new SecureRandom();
+    Random secureRandom = new Random();
 
-    public  String  shuffle(int[] number) {
+    public String shuffle(int[] number) {
         int store = 0;
         int counter = 0;
         //  = new int[number.length];
@@ -25,62 +25,58 @@ public class ShufflingAnArray {
 //    }
 //
 //        System.out.println();
-    return Arrays.toString(number);
+        return Arrays.toString(number);
     }
-public int[] ascendingSorting(int[]number) {
-    for (int counter = 0; counter <number.length-1; counter++) {
-        if (number[counter] >number[counter + 1])
-        {
-            int smallest= number[counter];
-            number[counter] = number[counter + 1];
-            number[counter + 1] = smallest;
-            counter=-1;
-        }
 
-    }
-    return number;
-}
-
-
-
-
-
-
-   public int[] descendingSorting(int[] number) {
-        for (int counter = 0; counter < number.length -1; counter++)
-        {
-            if (number[counter] <number[counter + 1])
-            {
-                int largest= number[counter];
+    public int[] ascendingSorting(int[] number) {
+        for (int counter = 0; counter < number.length - 1; counter++) {
+            if (number[counter] > number[counter + 1]) {
+                int smallest = number[counter];
                 number[counter] = number[counter + 1];
-                number[counter + 1] = largest;
-                counter=-1;
+                number[counter + 1] = smallest;
+                counter = -1;
             }
 
         }
         return number;
     }
-public int smallestNumber(int[] number){
-        int smallest=number[0];
-        for(int counter=0;counter<number.length-1;counter++){
 
-            if(smallest>number[counter]){
-                smallest=number[counter];
+
+    public int[] descendingSorting(int[] number) {
+        for (int counter = 0; counter < number.length - 1; counter++) {
+            if (number[counter] < number[counter + 1]) {
+                int largest = number[counter];
+                number[counter] = number[counter + 1];
+                number[counter + 1] = largest;
+                counter = -1;
+            }
+
+        }
+        return number;
+    }
+
+    public int smallestNumber(int[] number) {
+        int smallest = number[0];
+        for (int counter = 0; counter < number.length - 1; counter++) {
+
+            if (smallest > number[counter]) {
+                smallest = number[counter];
 
             }
 
         }
 
-return smallest;
+        return smallest;
 
 
     }
-    public int largestNumber(int[] number){
-        int largest=number[0];
-        for(int counter=0;counter<number.length-1;counter++){
 
-            if(largest<number[counter]){
-                largest=number[counter];
+    public int largestNumber(int[] number) {
+        int largest = number[0];
+        for (int counter = 0; counter < number.length - 1; counter++) {
+
+            if (largest < number[counter]) {
+                largest = number[counter];
 
             }
 
@@ -91,4 +87,16 @@ return smallest;
 
     }
 
+    public String printingValuesWithKey(String[] arr) {
+        int counter;
+        for (counter = 0; counter < arr.length - 1; counter++) {
+            if (counter % 2 == 0) {
+                System.out.println();
+            }
+
+            System.out.printf("%s%s",arr[counter]," ");
+
+        }
+        return arr[counter];
+    }
 }

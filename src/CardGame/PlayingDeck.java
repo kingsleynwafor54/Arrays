@@ -1,4 +1,4 @@
-package cardGame;
+package CardGame;
 
 public class PlayingDeck extends CardDeck{
     public PlayingDeck(int numberOfCards) {

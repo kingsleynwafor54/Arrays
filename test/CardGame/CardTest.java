@@ -1,11 +1,11 @@
-package cardGame;
+package CardGame;
 
-import cardGame.exceptions.InvalidCardValueException;
+import CardGame.exceptions.InvalidCardValueException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static cardGame.Suit.*;
+import static CardGame.Suit.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -76,6 +76,22 @@ public class CardTest {
     void invalidCardExceptionIsThrownWhenValueIsInvalid(){
   assertThrows(InvalidCardValueException.class,()->new Card(DIAMOND,17));
 }
-
-
+@Test
+    void methodDisplayTest(){
+        Card card= new Card(DIAMOND,12);
+        String  expectedToString="Queen of Diamond";
+        assertEquals(expectedToString,card.toString());
+        card=new Card(SPADE,13);
+        String expectedToString2="King of Spade";
+        assertEquals(expectedToString2,card.toString());
+         System.out.println(card);
+}
+@Test
+    void methodCompareCards(){
+        Card card=new Card(SPADE,12);
+        Card card1=new Card(SPADE,13);
+            assertEquals(card,card1);
+//            CardDeck cardDeck=new CardDeck(2);
+//            assertEquals(card,cardDeck);
+}
 }

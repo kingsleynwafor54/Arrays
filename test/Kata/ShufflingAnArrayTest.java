@@ -49,9 +49,11 @@ assertEquals(2,shufflingAnArray.smallestNumber(number));
 
     @Test
     void methodLargestNumber(){
-        int[] number={3,4,5,6,9,19,13,2,17,8,6,};
-        System.out.println(shufflingAnArray.largestNumber(number));
-        assertEquals(19,shufflingAnArray.largestNumber(number));
+       // int[] number={3,4,5,6,9,19,13,2,17,8,6,};
+        String[] arr={"Kingsley",":1001","Chuks",":1002","Ebuka",":1003","Daniel",":1004"};
+        System.out.println(shufflingAnArray.printingValuesWithKey(arr));
+//        System.out.println(shufflingAnArray.largestNumber(number));
+//        assertEquals(19,shufflingAnArray.largestNumber(number));
     }
 
 }

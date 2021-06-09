@@ -1,4 +1,4 @@
-package cardGame.exceptions;
+package CardGame.exceptions;
 
 public class CardGameException extends RuntimeException{
     public CardGameException(String message) {

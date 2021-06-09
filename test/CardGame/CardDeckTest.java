@@ -1,11 +1,11 @@
-package cardGame;
+package CardGame;
 
-import cardGame.exceptions.StackOverflowException;
-import cardGame.exceptions.StackUnderflowException;
+import CardGame.exceptions.StackOverflowException;
+import CardGame.exceptions.StackUnderflowException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static cardGame.Suit.*;
+import static CardGame.Suit.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CardDeckTest {
@@ -57,6 +57,31 @@ public class CardDeckTest {
         assertTrue(cardDeck.isFull());
         assertThrows(StackOverflowException.class,()->cardDeck.push(cardGame));
 }
+@Test
+void methodCanDisplayShuffledCard(){
+    Card firstCard=new Card(DIAMOND,2);
+    Card secondCard=new Card(CLUB,3);
+    Card thirdCard=new Card(SPADE,7);
+    Card fourthCard=new Card(SPADE,6);
+    cardDeck.push(firstCard);
+    cardDeck.push(secondCard);
+    cardDeck.push(thirdCard);
+    cardDeck.push(fourthCard);
+    cardDeck.shuffle();
+   System.out.println(cardDeck.shuffle());
+    assertNotSame(fourthCard,cardDeck.peek());
 
+}
+@Test
+    void compareCardsTest(){
+        Card firstCard=new Card(DIAMOND,2);
+        Card secondCard=new Card(CLUB,2);
+        Card thirdCard=new Card(SPADE,2);
+        Card[]number={firstCard,secondCard,thirdCard};
+
+
+
+//    assertNotEquals(number,cardDeck.shuffle(number));
+}
 
     }
